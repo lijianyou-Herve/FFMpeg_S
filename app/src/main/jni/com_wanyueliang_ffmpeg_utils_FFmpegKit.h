@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 /*
- * Class:     com_wanyueliang_ffmpeg_utils_FFmpegKit
+ * Class:     com_wanyueliang_ffmpeg_s_utils_FFmpegKit
  * Method:    run
  * Signature: ([Ljava/lang/String;)I
  */

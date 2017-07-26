@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FFMpeg_S</string>
+    <string name="cut_video">裁剪</string>
 </resources>
