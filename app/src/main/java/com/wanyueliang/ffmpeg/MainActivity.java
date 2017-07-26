@@ -9,11 +9,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.wanyueliang.ffmpeg.utils.FFmpegHepler;
 import com.wanyueliang.ffmpeg.utils.FFmpegKit;
 
 public class MainActivity extends AppCompatActivity {
     private final String input = Environment.getExternalStorageDirectory().getPath() + "/AVM" + "/99.mp4";
-    private final String output = Environment.getExternalStorageDirectory().getPath() + "/AVM" + "/99_cut.mp4";
+
+    private final String outputMp4 = Environment.getExternalStorageDirectory().getPath() + "/AVM" + "/99_out.mp4";
+    private final String outputMp4Cut = Environment.getExternalStorageDirectory().getPath() + "/AVM" + "/99_cut.mp4";
+
+    private final String outputJpg = Environment.getExternalStorageDirectory().getPath() + "/AVM" + "/99_cut.jpg";
+    private final String outputJpgArray = Environment.getExternalStorageDirectory().getPath() + "/AVM" + "/image-%03d.jpeg";
     /*View*/
     private Button mBtnCut;
 
@@ -43,41 +49,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void run() {
+        String[] ffmpegValues = null;
 
-        //ffmpeg -ss 00:00:00 -t 00:00:30 -i test.mp4 -vcodec copy -acodec copy output.mp4
-        //ffmpeg -y -i filename -ss start -t duratio -codec copy
+        ffmpegValues = FFmpegHepler.cutVideo(input, "00:01:00", "00:02:00", outputMp4Cut);
+//        ffmpegValues = FFmpegHepler.cutFrameVideo(input, "00:00:30", outputJpg);
+//        ffmpegValues = FFmpegHepler.cutVideoToArrayImage(input, "00:00:00", outputJpgArray);
+//        ffmpegValues = FFmpegHepler.imageToVideo(outputJpgArray, "20", outputMp4);
 
-        String[] commands = new String[13];
-        commands[0] = "ffmpeg";
-        commands[1] = "-i";
-        commands[2] = input;
-        commands[3] = "-ss";
-        commands[4] = "00:00:05";
-        commands[5] = "-t";
-        commands[6] = "00:00:30";
-        commands[7] = "-vcodec";
-        commands[8] = "copy";
-        commands[9] = "-acodec";
-        commands[10] = "copy";
-        commands[11] = "-y";
-        commands[12] = output;
-
-//        String[] commands = new String[13];
-//        commands[0] = "ffmpeg";
-//        commands[1] = "-ss";
-//        commands[2] = "00:00:00";
-//        commands[3] = "-t";
-//        commands[4] = "00:00:30";
-//        commands[5] = "-i";
-//        commands[6] = input;
-//        commands[7] = "-vcodec";
-//        commands[8] = "copy";
-//        commands[9] = "-acodec";
-//        commands[10] = "copy";
-//        commands[11] = "-y";
-//        commands[12] = output;
-
-        FFmpegKit.execute(commands, new FFmpegKit.KitInterface() {
+        FFmpegKit.execute(ffmpegValues, new FFmpegKit.KitInterface() {
             @Override
             public void onStart() {
                 showProgress();
@@ -101,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     private synchronized void showProgress() {
         if (progressDialog == null) {

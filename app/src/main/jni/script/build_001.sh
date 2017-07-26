@@ -1,5 +1,5 @@
 
-#FFMpeg 的脚本，测试通过 12M
+#FFMpeg 的脚本，只开发视频裁剪，测试通过 12M
 # 基于 ffmpeg 3.3.2,windows
 #!/bin/bash
 export TMPDIR=E:/ffmpeg-3.3.2/ffmpeg-3.3.2/Android_libs_One #设置编译中临时文件目录，不然会报错 unable to create temporary file
