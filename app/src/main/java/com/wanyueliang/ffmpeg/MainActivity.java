@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private void run() {
         String[] ffmpegValues = null;
 
-        ffmpegValues = FFmpegHepler.cutVideo(input, "00:01:00", "00:02:00", outputMp4Cut);
-//        ffmpegValues = FFmpegHepler.cutFrameVideo(input, "00:00:30", outputJpg);
+//        ffmpegValues = FFmpegHepler.cutVideo(input, "00:02:00", "00:04:00", outputMp4Cut);
+        ffmpegValues = FFmpegHepler.cutFrameVideo(input, "00:00:30", outputJpg);
 //        ffmpegValues = FFmpegHepler.cutVideoToArrayImage(input, "00:00:00", outputJpgArray);
 //        ffmpegValues = FFmpegHepler.imageToVideo(outputJpgArray, "20", outputMp4);
 

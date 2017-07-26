@@ -60,7 +60,8 @@ D:/Android_FFMpeg/FFMpeg_S/app/src/main/obj/local/armeabi-v7a/objs/ffmpeginvoke/
   E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libswscale/swscale.h \
   E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libswscale/version.h \
   E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libavutil/eval.h \
-  E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libavutil/avassert.h
+  E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libavutil/avassert.h \
+  D:/Android_FFMpeg/FFMpeg_S/app/src/main/jni/logjam.h
 
 E:\ffmpeg-3.3.2\ffmpeg-3.3.2\config.h:
 
@@ -183,3 +184,5 @@ E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libswscale/version.h:
 E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libavutil/eval.h:
 
 E:\ffmpeg-3.3.2\ffmpeg-3.3.2\libavutil/avassert.h:
+
+D:/Android_FFMpeg/FFMpeg_S/app/src/main/jni/logjam.h:

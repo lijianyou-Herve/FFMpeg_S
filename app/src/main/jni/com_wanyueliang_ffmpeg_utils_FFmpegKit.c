@@ -16,5 +16,12 @@ JNIEXPORT jint JNICALL Java_com_wanyueliang_ffmpeg_utils_FFmpegKit_run
         argv[i] = (char*) (*env)->GetStringUTFChars(env, js, 0);
         LOGD("Kit argv %s\n", argv[i]);
     }
-    return run(argc, argv);
+
+    LOGD("Run ffmpeg");
+
+    int result = run(argc, argv);
+
+    LOGD("ffmpeg result %d", result);
+
+    return result;
 }

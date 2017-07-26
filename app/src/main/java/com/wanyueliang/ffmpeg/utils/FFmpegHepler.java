@@ -23,10 +23,10 @@ public class FFmpegHepler {
 
         commands.add("ffmpeg");
         commands.add("-y");
-        commands.add("-ss");
-        commands.add(startTime);
         commands.add("-i");
         commands.add(input);
+        commands.add("-ss");
+        commands.add(startTime);
         commands.add("-t");
         commands.add(endTime);
         commands.add("-c");
